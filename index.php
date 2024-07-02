@@ -1,3 +1,5 @@
+<?php include "db.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +13,45 @@
   <main>
     
   <section class="form-section">
-      <form action="">
+      <form action="./database/save_tasks.php" method="POST">
         <fieldset>
           <label for="task-name">Task Name</label>
-          <input type="text" placeholder="task name...">
+          <input type="text" name="title" placeholder="task name...">
         </fieldset>
         <fieldset>
           <label class="textarea-label" for="task-description">Task Description</label>
           <textarea name="description" id="description"></textarea>
         </fieldset>
+        <button type="submit" name="save_task">Save Task</button>
       </form>
     </section>
 
     <section>
-      section data
+      
+    <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php 
+            $query = "SELECT * FROM tasks";
+            $result = mysqli_query($conn, $query);
+
+            while ($row = mysqli_fetch_array($result)) { ?>
+              <tr>
+                <td><?php echo $row['task_name'] ?></td>
+                <td><?php echo $row['task_description'] ?></td>
+                <td><?php echo $row['created_at'] ?></td>
+              </tr>
+            <?php }
+          ?>
+        </tbody>
+      </table>
+
     </section>
   </main>
 

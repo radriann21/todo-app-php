@@ -70,3 +70,30 @@ textarea {
   border: 1px solid #ababab;
   padding: .5rem;
 }
+
+button[type="submit"] {
+  margin-top: 1rem;
+  width: 80%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #5fa962;
+  color: #fff;
+  margin: 1rem auto 0 auto;
+  cursor: pointer;
+}
+
+table {
+  border: 1px solid #000;
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  border: 1px solid #ababab;
+}
+
+td {
+  font-size: .8em;
+  border: 1px solid #ababab;
+}
