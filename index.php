@@ -34,6 +34,7 @@
             <th>Title</th>
             <th>Description</th>
             <th>Created</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +47,9 @@
                 <td><?php echo $row['task_name'] ?></td>
                 <td><?php echo $row['task_description'] ?></td>
                 <td><?php echo $row['created_at'] ?></td>
+                <td>
+                  <a href="./database/delete_task.php?id=<?= $row['task_id'] ?>">Delete</a>
+                </td>
               </tr>
             <?php }
           ?>
